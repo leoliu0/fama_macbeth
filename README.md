@@ -16,7 +16,9 @@ It takes four arguments. df is stock-date panel. i is the variable name for stoc
 formula = "ret ~ 1 + mkt + smb + hml"
 ```
 
-nw is the number of newey-west lags you would like to include (omit nw to estimate without nw)
+nw is the number of newey-west lags you would like to include (omit nw to estimate without nw).
+
+After calculation, the results can be seen from params.
 
 ```python
 res.params # contains estimates for your factor(s).
