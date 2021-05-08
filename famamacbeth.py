@@ -1,3 +1,7 @@
+import pandas as pd
+from statsmodels.formula.api import ols
+
+
 class fm():
     def check_uniq(self, df, l):
         return df.groupby(l).size()[lambda s: s > 1]
