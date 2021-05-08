@@ -7,10 +7,16 @@ get the famamacbeth.py and
 ```python
 from famamacbeth import fm
 
-res = fm(df,i,t,nw)
+res = fm(df,i,t,formula,nw)
 
 ```
-It takes four arguments. df is stock-date panel. i is the variable name for stock (e.g. permno) and t is the name for date variable. nw is the number of newey-west lags you would like to include (omit nw to estimate without nw)
+It takes four arguments. df is stock-date panel. i is the variable name for stock (e.g. permno) and t is the name for date variable. formula is statsmodel formula, for example,
+
+```python
+formula = "ret ~ 1 + mkt + smb + hml"
+```
+
+nw is the number of newey-west lags you would like to include (omit nw to estimate without nw)
 
 ```python
 res.params # contains estimates for your factor(s).

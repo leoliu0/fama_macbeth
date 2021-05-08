@@ -6,7 +6,7 @@ class fm():
     def check_uniq(self, df, l):
         return df.groupby(l).size()[lambda s: s > 1]
 
-    def __init__(self, df, i=None, t=None, formula=None, nw=None):
+    def __init__(self, df, i, t, formula, nw=None):
         self.i = i
         self.t = t
         self.df = df.sort_values([i, t])
