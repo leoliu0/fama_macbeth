@@ -10,7 +10,7 @@ from famamacbeth import fm
 res = fm(df,i,t,formula,nw)
 
 ```
-It takes four arguments. df is stock-date panel. i is the variable name for stock (e.g. permno) and t is the name for date variable. formula is statsmodel formula, for example,
+It takes five arguments. df is stock-date panel. i is the variable name for stock (e.g. permno) and t is the name for date variable. formula is statsmodel formula, for example,
 
 ```python
 formula = "ret ~ 1 + mkt + smb + hml"
