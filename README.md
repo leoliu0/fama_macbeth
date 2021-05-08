@@ -16,3 +16,5 @@ It takes four arguments. df is stock-date panel. i is the variable name for stoc
 res.params # contains estimates for your factor(s).
 res.tvalues # contains test statistics for your factor(s).
 ```
+
+The implementation is rather naive. Feel to open an issue if you would like more functionalities. Ideally when it gets mature I can push it to PyPi.
