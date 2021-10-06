@@ -25,7 +25,7 @@ class fm():
         for x in ts:
             sample = df[df[t] == x]
             res = ols(formula, sample).fit()
-            betas.append(res.params)
+            self.betas.append(res.params)
 
             self.rsquared.append(res.rsquared)
             self.nobs.append(res.nobs)
@@ -40,7 +40,7 @@ class fm():
                 continue
             if v == '1':  # No intercept
                 continue
-            beta_df = pd.DataFrame([b[v] for b in betas if v in b],
+            beta_df = pd.DataFrame([b[v] for b in self.betas if v in b],
                                    columns=['var'])
             if nw:
                 res = ols('var ~ 1', beta_df).fit(cov_type='HAC',
