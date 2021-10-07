@@ -19,7 +19,7 @@ class fm():
         assert len(self.check_uniq(df, [i, t])) == 0, 'Data is not Panel !'
 
         ts = sorted(df[t].unique())
-        betas = []
+        self.betas = []
         self.rsquared = list()
         self.nobs = list()
         for x in ts:

@@ -1,29 +1,4 @@
 from statsmodels.api import OLS
-from famamacbeth import downloader
-
-downloader()
-
-ff5 = rcsv('F-F_Research_Data_5_Factors_2x3.CSV',
-           skiprows=4,
-           names=['date', 'Mkt-RF', 'SMB', 'HML', 'RMW', 'CMA', 'RF'])
-ff5.date = tonum(ff5.date, errors='coerce')
-ff5 = ff5[ff5.date > 10000].astype(float)
-
-ff3 = rcsv('F-F_Research_Data_Factors.CSV',
-           skiprows=4,
-           names=['date', 'Mkt-RF', 'SMB', 'HML', 'RF'])
-
-ff3.date = tonum(ff3.date, errors='coerce')
-ff3 = ff3[ff3.date > 10000].astype(float)
-
-q5 = rcsv('q5.csv').astype(float)
-
-q5['date'] = q5.year * 100 + q5.month
-
-msf = pd.read_sql('''select permno,date,ret from msf''', wrdscon)
-
-msf['date'] = msf.date.dt.year * 100 + msf.date.dt.month
-
 
 class adjust():
     def regs(self, per):
