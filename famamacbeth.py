@@ -34,7 +34,7 @@ class fm():
 
         self.params = dict()
         self.tvalues = dict()
-        for v in formula.split('~')[1].split('+'):
+        for v in formula.split('~')[1].split('+') + ['Intercept']:
             v = v.strip()
             if 'C(' in v:  # No dummies
                 continue
